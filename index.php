@@ -236,7 +236,34 @@ $pageTitle = "KUET Business & Entrepreneurship Club | KBEC";
         </div>
     </section>
 
-  
+    <!-- Contact Section -->
+    <section class="contact" id="contact" aria-label="Contact KBEC">
+        <div class="contact-container">
+            <h2>Get In Touch</h2>
+            <p class="contact-intro">Have questions or want to join our community? Connect with us on social media or send an email.</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><strong>Organization:</strong><br>KUET Business &amp; Entrepreneurship Club (KBEC)</p>
+                    <p><strong>Institution:</strong><br>Khulna University of Engineering &amp; Technology</p>
+                    <p><strong>Email:</strong><br><a href="mailto:info@kbec.org">info@kbec.org</a></p>
+                </div>
+                
+                <div class="contact-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/kuetbec" target="_blank" rel="noopener noreferrer" class="social-link facebook" title="Visit our Facebook page">
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://www.linkedin.com/company/kuetbec" target="_blank" rel="noopener noreferrer" class="social-link linkedin" title="Visit our LinkedIn page">
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 </main>
 
