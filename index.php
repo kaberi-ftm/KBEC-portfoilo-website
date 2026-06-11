@@ -35,6 +35,10 @@ $pageTitle = "KUET Business & Entrepreneurship Club | KBEC";
         <li><a href="#whats-next">What's Next</a></li>
         <li><a href="#awards">Awards</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li>
+  <button class="join-btn" id="joinBtn">Join Us</button>
+</li>
+
     </ul>
 </nav>
 
@@ -48,7 +52,10 @@ $pageTitle = "KUET Business & Entrepreneurship Club | KBEC";
             <p class="hero-subheading">
                 The Premier Business and Entrepreneurship Club at KUET
             </p>
-            <a class="btn-gold" href="#about">Explore KBEC</a>
+            <div class="hero-buttons">
+                <a class="btn-gold" href="#about">Explore KBEC</a>
+                <button class="btn-gold btn-join" id="joinBtnHero">Join Us</button>
+            </div>
         </div>
 
         <a class="scroll-indicator" href="#about">
@@ -236,34 +243,106 @@ $pageTitle = "KUET Business & Entrepreneurship Club | KBEC";
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact" aria-label="Contact KBEC">
+    <!-- Contact Section (Footer) -->
+    <footer class="contact" id="contact" aria-label="Contact KBEC">
         <div class="contact-container">
-            <h2>Get In Touch</h2>
-            <p class="contact-intro">Have questions or want to join our community? Connect with us on social media or send an email.</p>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p><strong>Organization:</strong><br>KUET Business &amp; Entrepreneurship Club (KBEC)</p>
-                    <p><strong>Institution:</strong><br>Khulna University of Engineering &amp; Technology</p>
-                    <p><strong>Email:</strong><br><a href="mailto:info@kbec.org">info@kbec.org</a></p>
+            <div class="footer-grid">
+                <!-- Left Section -->
+                <div class="footer-section footer-about">
+                    <div class="footer-brand">
+                        <img src="logo.png" alt="KBEC Logo" class="footer-logo">
+                        <div class="footer-brand-text">
+                            <strong>KUET Business</strong>
+                            <strong>&amp; Entrepreneurship Club</strong>
+                        </div>
+                    </div>
+                    <p class="footer-tagline">The Premier Business and Entrepreneurship Club of KUET</p>
+                    <div class="footer-contact-info">
+                        <p><span class="icon">📍</span>Khulna University of Engineering &amp; Technology</p>
+                        <p><span class="icon">📞</span><a href="tel:+8801234567890">+880 1234 567 890</a></p>
+                        <p><span class="icon">✉️</span><a href="mailto:info@kbec.org">info@kbec.org</a></p>
+                    </div>
                 </div>
                 
-                <div class="contact-social">
-                    <h3>Follow Us</h3>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/kuetbec" target="_blank" rel="noopener noreferrer" class="social-link facebook" title="Visit our Facebook page">
-                            <span>Facebook</span>
+                <!-- Middle Section -->
+                <div class="footer-section footer-explore">
+                    <h3>EXPLORE</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#whats-next">What's Next</a></li>
+                        <li><a href="#awards">Awards</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Right Section -->
+                <div class="footer-section footer-social">
+                    <h3>FOLLOW US</h3>
+                    <div class="footer-social-links">
+                        <a href="https://www.facebook.com/kuetbec" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Facebook">
+                            f
                         </a>
-                        <a href="https://www.linkedin.com/company/kuetbec" target="_blank" rel="noopener noreferrer" class="social-link linkedin" title="Visit our LinkedIn page">
-                            <span>LinkedIn</span>
+                        <a href="https://www.linkedin.com/company/kuetbec" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn">
+                            in
+                        </a>
+                        <a href="https://www.instagram.com/kuetbec" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Instagram">
+                            📷
                         </a>
                     </div>
                 </div>
             </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 KBEC OFFICIAL. ALL RIGHTS RESERVED.</p>
+            </div>
         </div>
-    </section>
+    </footer>
+
+    <!-- Join Modal -->
+<div class="join-modal" id="joinModal">
+
+    <div class="modal-overlay"></div>
+
+    <div class="modal-content">
+
+        <button class="modal-close" id="closeModal">
+            &times;
+        </button>
+
+        <h2>Join KBEC</h2>
+
+        <p class="modal-subtitle">
+            Ready to be part of something extraordinary?
+        </p>
+
+       <form class="join-form" method="POST" action="join.php">
+
+           <input type="text" name="fullname" placeholder="Full Name" required>
+
+<input type="email" name="email" placeholder="Email Address" required>
+
+<input type="text" name="department" placeholder="Department" required>
+
+<input type="text" name="student_id" placeholder="Student ID" required>
+
+<input type="text" name="semester" placeholder="Semester" required>
+
+<textarea name="message" rows="4" placeholder="Why do you want to join KBEC?"></textarea>
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+                Submit Application
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
 
 </main>
 
