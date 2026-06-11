@@ -1,28 +1,23 @@
 <?php
-// 1. Get form data safely
-$fullname = $_POST['fullname'] ?? '';
-$email = $_POST['email'] ?? '';
-$department = $_POST['department'] ?? '';
-$student_id = $_POST['student_id'] ?? '';
-$semester = $_POST['semester'] ?? '';
-$message = $_POST['message'] ?? '';
 
-// 2. Basic validation
-if (!$fullname || !$email) {
-    die("Name and email are required!");
+require_once 'db.php';
+
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    die("Invalid request.");
 }
 
-// 3. Connect to database
-$conn = new mysqli("localhost", "root", "", "kbec");
+$fullname = trim($_POST['fullname'] ?? '');
+$email = trim($_POST['email'] ?? '');
+$department = trim($_POST['department'] ?? '');
+$student_id = trim($_POST['student_id'] ?? '');
+$semester = trim($_POST['semester'] ?? '');
+$message = trim($_POST['message'] ?? '');
 
-// check connection
-if ($conn->connect_error) {
-    die("DB failed: " . $conn->connect_error);
+if (empty($fullname) || empty($email)) {
+    die("Name and Email are required.");
 }
 
-// 4. Insert into database
-$stmt = $conn->prepare("
-    INSERT INTO applications 
+$stmt = $conn->prepare("INSERT INTO applications
     (fullname, email, department, student_id, semester, message)
     VALUES (?, ?, ?, ?, ?, ?)
 ");
@@ -37,8 +32,13 @@ $stmt->bind_param(
     $message
 );
 
-$stmt->execute();
+if ($stmt->execute()) {
+    header("Location: index.php?success=1");
+exit();
+} else {
+    echo "Something went wrong.";
+}
 
-// 5. Done
-echo "Application submitted successfully!";
+$stmt->close();
+$conn->close();
 ?>

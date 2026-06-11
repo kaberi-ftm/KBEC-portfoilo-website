@@ -1,5 +1,9 @@
 <?php
 $pageTitle = "KUET Business & Entrepreneurship Club | KBEC";
+
+if (isset($_GET['success'])) {
+    echo "<script>alert('Application Submitted Successfully!');</script>";
+}
 ?>
 
 <!DOCTYPE html>
