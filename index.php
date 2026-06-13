@@ -14,7 +14,7 @@ if (isset($_GET['success'])) {
     <title><?= $pageTitle ?></title>
 
     <meta name="description" content="Official landing page for KUET Business & Entrepreneurship Club (KBEC).">
-
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -24,6 +24,7 @@ if (isset($_GET['success'])) {
 <body>
 
 <nav class="navbar" id="navbar">
+
     <div class="brand">
         <img src="logo.png" alt="KBEC Logo" class="brand-logo">
         <div class="brand-copy">
@@ -32,18 +33,30 @@ if (isset($_GET['success'])) {
         </div>
     </div>
 
-    <ul class="nav-menu">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#whats-next">What's Next</a></li>
-        <li><a href="#awards">Awards</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li>
-  <button class="join-btn" id="joinBtn">Join Us</button>
-</li>
+    <button class="menu-toggle" id="menuToggle">
+        ☰ MENU
+    </button>
 
-    </ul>
+    <ul class="nav-menu" id="navMenu">
+
+    <button class="menu-close" id="menuClose">
+        CLOSE ✕
+    </button>
+
+    <li><a href="#home">HOME</a></li>
+    <li><a href="#about">ABOUT</a></li>
+    <li><a href="#events">EVENTS</a></li>
+    <li><a href="#whats-next">WHAT'S NEXT</a></li>
+    <li><a href="#awards">AWARDS</a></li>
+    <li><a href="#contact">CONTACT</a></li>
+
+    <li>
+        <button class="join-btn" id="joinBtn">
+            JOIN US
+        </button>
+    </li>
+
+</ul>
 </nav>
 
 <main>
@@ -92,61 +105,96 @@ if (isset($_GET['success'])) {
     </section>
 
     <!-- Events Section -->
-    <section class="events" id="events" aria-label="KBEC Events">
-        <div class="events-container">
-            <h2>Our Events</h2>
+    <section class="events" id="events">
 
-            <p class="events-intro">
-                Explore the flagship events and initiatives organized by KBEC throughout the year.
+    <div class="events-header">
+        <h2>EVENTS</h2>
+
+        <p>
+            Explore the flagship events and competitions
+            hosted by KBEC.
+        </p>
+    </div>
+
+    <!-- Event 1 -->
+    <div class="showcase-event">
+
+        <div class="showcase-content">
+
+            <h3>KBEC NEXUS</h3>
+
+            <h4>Season 2</h4>
+
+            <p>
+                KBEC Nexus is a national business case competition
+                designed to solve real-world challenges.
             </p>
 
-            <div class="event-grid">
+            <span class="event-date">
+                December 12, 2025
+            </span>
 
-                <div class="event-card">
-                    <div class="event-image">
-                        <img src="event1.jpg" alt="KBEC Nexus">
-                    </div>
-
-                    <div class="event-content">
-                        <h3>KBEC Nexus</h3>
-                        <p class="event-date">Flagship Business Competition</p>
-                        <p>
-                            A premier platform where students compete through business strategy, innovation, and entrepreneurial thinking.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="event-card">
-                    <div class="event-image">
-                        <img src="event2.jpg" alt="TEDxKUET">
-                    </div>
-
-                    <div class="event-content">
-                        <h3>TEDxKUET</h3>
-                        <p class="event-date">Ideas Worth Spreading</p>
-                        <p>
-                            Bringing together visionaries, innovators, and changemakers to inspire the next generation through powerful stories.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="event-card">
-                    <div class="event-image">
-                        <img src="event3.jpg" alt="Case Crack">
-                    </div>
-
-                    <div class="event-content">
-                        <h3>Case Crack</h3>
-                        <p class="event-date">Business Case Competition</p>
-                        <p>
-                            Participants solve real-world business challenges and present strategic solutions before experienced judges.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
         </div>
-    </section>
+
+        <div class="showcase-image">
+            <img src="event1.jpg">
+        </div>
+
+    </div>
+
+    <!-- Event 2 -->
+    <div class="showcase-event">
+
+        <div class="showcase-content">
+
+            <h3>TEDXKUET</h3>
+
+            <h4>2026</h4>
+
+            <p>
+                Bringing together innovators,
+                leaders and changemakers.
+            </p>
+
+            <span class="event-date">
+                February 18, 2026
+            </span>
+
+        </div>
+
+        <div class="showcase-image">
+            <img src="event2.jpg">
+        </div>
+
+    </div>
+
+    <!-- Event 3 -->
+    <div class="showcase-event">
+
+        <div class="showcase-content">
+
+            <h3>CASE CRACK</h3>
+
+            <h4>3.0</h4>
+
+            <p>
+                Business case solving competition
+                with real industry problems.
+            </p>
+
+            <span class="event-date">
+                March 10, 2026
+            </span>
+
+        </div>
+
+        <div class="showcase-image">
+            <img src="event3.jpg">
+        </div>
+
+    </div>
+
+</section>
 
     <!-- What's Next -->
     <section class="whats-next" id="whats-next" aria-label="What's Next">

@@ -123,3 +123,20 @@ window.addEventListener('keydown', (e) => {
         joinModal.classList.remove("active");
     }
 });
+const menuToggle = document.getElementById("menuToggle");
+const menuClose = document.getElementById("menuClose");
+const navMenu = document.getElementById("navMenu");
+
+menuToggle?.addEventListener("click", () => {
+    navMenu.classList.add("active");
+});
+
+menuClose?.addEventListener("click", () => {
+    navMenu.classList.remove("active");
+});
+
+document.querySelectorAll("#navMenu a").forEach(link => {
+    link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+    });
+});
