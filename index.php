@@ -105,96 +105,61 @@ if (isset($_GET['success'])) {
     </section>
 
     <!-- Events Section -->
-    <section class="events" id="events">
+    <section class="events" id="events" aria-label="KBEC Events">
+        <div class="events-container">
+            <h2>Our Events</h2>
 
-    <div class="events-header">
-        <h2>EVENTS</h2>
-
-        <p>
-            Explore the flagship events and competitions
-            hosted by KBEC.
-        </p>
-    </div>
-
-    <!-- Event 1 -->
-    <div class="showcase-event">
-
-        <div class="showcase-content">
-
-            <h3>KBEC NEXUS</h3>
-
-            <h4>Season 2</h4>
-
-            <p>
-                KBEC Nexus is a national business case competition
-                designed to solve real-world challenges.
+            <p class="events-intro">
+                Explore the flagship events and initiatives organized by KBEC throughout the year.
             </p>
 
-            <span class="event-date">
-                December 12, 2025
-            </span>
+            <div class="event-grid">
 
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="event1.jpg" alt="KBEC Nexus">
+                    </div>
+
+                    <div class="event-content">
+                        <h3>KBEC Nexus</h3>
+                        <p class="event-date">Flagship Business Competition</p>
+                        <p>
+                            A premier platform where students compete through business strategy, innovation, and entrepreneurial thinking.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="event2.jpg" alt="TEDxKUET">
+                    </div>
+
+                    <div class="event-content">
+                        <h3>TEDxKUET</h3>
+                        <p class="event-date">Ideas Worth Spreading</p>
+                        <p>
+                            Bringing together visionaries, innovators, and changemakers to inspire the next generation through powerful stories.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="event3.jpg" alt="Case Crack">
+                    </div>
+
+                    <div class="event-content">
+                        <h3>Case Crack</h3>
+                        <p class="event-date">Business Case Competition</p>
+                        <p>
+                            Participants solve real-world business challenges and present strategic solutions before experienced judges.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
         </div>
-
-        <div class="showcase-image">
-            <img src="event1.jpg">
-        </div>
-
-    </div>
-
-    <!-- Event 2 -->
-    <div class="showcase-event">
-
-        <div class="showcase-content">
-
-            <h3>TEDXKUET</h3>
-
-            <h4>2026</h4>
-
-            <p>
-                Bringing together innovators,
-                leaders and changemakers.
-            </p>
-
-            <span class="event-date">
-                February 18, 2026
-            </span>
-
-        </div>
-
-        <div class="showcase-image">
-            <img src="event2.jpg">
-        </div>
-
-    </div>
-
-    <!-- Event 3 -->
-    <div class="showcase-event">
-
-        <div class="showcase-content">
-
-            <h3>CASE CRACK</h3>
-
-            <h4>3.0</h4>
-
-            <p>
-                Business case solving competition
-                with real industry problems.
-            </p>
-
-            <span class="event-date">
-                March 10, 2026
-            </span>
-
-        </div>
-
-        <div class="showcase-image">
-            <img src="event3.jpg">
-        </div>
-
-    </div>
-
-</section>
+    </section>
 
     <!-- What's Next -->
     <section class="whats-next" id="whats-next" aria-label="What's Next">
