@@ -29,7 +29,7 @@ $result = $conn->query($sql);
 </head>
 
 <body>
-
+<?php include("uploads/includes/navbar.php"); ?>
   <section class="events-header">
     <h1>All KBEC Activities</h1>
     <p>Explore our workshops, seminars, competitions and entrepreneurship initiatives.</p>

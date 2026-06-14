@@ -25,7 +25,7 @@ $result = $conn->query(
 <body>
 
   <!-- Navigation -->
-
+<?php include("uploads/includes/navbar.php"); ?>
   <nav class="faculty-nav">
     <a href="#moderator">Moderator</a>
     <a href="#advisor">Advisor</a>

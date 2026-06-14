@@ -4,7 +4,7 @@
     <div class="brand">
 
         <a href="index.php">
-            <img src="logo.png" alt="KBEC Logo" class="brand-logo">
+            <img src="/logo.png" alt="KBEC Logo" class="brand-logo">
         </a>
 
         <div class="brand-copy">

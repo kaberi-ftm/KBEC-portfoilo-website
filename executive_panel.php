@@ -23,7 +23,7 @@ $result = $conn->query(
 </head>
 
 <body>
-
+<?php include("uploads/includes/navbar.php"); ?>
   <section class="alumni-section">
 
     <h1>KBEC Executive Panel</h1>
