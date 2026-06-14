@@ -52,7 +52,7 @@ if (isset($_GET['success'])) {
 
    <li><a href="index.php#home">HOME</a></li>
 <li><a href="index.php#about">ABOUT</a></li>
-<li><a href="index.php#events">EVENTS</a></li>
+<li><a href="events.php">EVENTS</a></li>
 <li><a href="index.php#sponsors">SPONSORS</a></li>
 <li><a href="index.php#club_partners">CLUB PARTNERS</a></li>
 
@@ -304,7 +304,7 @@ if (isset($_GET['success'])) {
                     <h3>EXPLORE</h3>
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#events">Events</a></li>
+                        <li><a href="events.php">Events</a></li>
                     
                         <li><a href="#awards">Awards</a></li>
                         <li><a href="#about">About</a></li>

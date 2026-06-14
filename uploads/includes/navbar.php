@@ -29,7 +29,7 @@
 
         <li><a href="index.php#about">ABOUT</a></li>
 
-        <li><a href="index.php#events">EVENTS</a></li>
+        <li><a href="events.php">EVENTS</a></li>
 
         <li><a href="index.php#sponsors">SPONSORS</a></li>
 

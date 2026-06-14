@@ -47,14 +47,14 @@
 
                     <li><a href="index.php#about">About</a></li>
 
-                    <li><a href="index.php#events">Events</a></li>
+                    <li><a href="events.php">EVENTS</a></li>
 
                     <li><a href="index.php#whats-next">What's Next</a></li>
 
                     <li><a href="index.php#awards">Awards</a></li>
 
                     <li><a href="index.php#contact">Contact</a></li>
-
+                    <li><a href="admin/admin_login.php">Admin Panel</a></li>
                 </ul>
 
             </div>
