@@ -23,12 +23,14 @@ $result = $conn->query(
 </head>
 
 <body>
+  <?php include("uploads/includes/navbar.php"); ?>
 
   <!-- Navigation -->
-<?php include("uploads/includes/navbar.php"); ?>
+
   <nav class="faculty-nav">
     <a href="#moderator">Moderator</a>
     <a href="#advisor">Advisor</a>
+    <li><a href="index.php#home">Home</a></li>
   </nav>
 
   <?php

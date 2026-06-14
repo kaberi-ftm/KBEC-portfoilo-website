@@ -41,7 +41,7 @@
 
         <li><a href="faculty_advisors.php">FACULTY ADVISORS</a></li>
 
-        <li><a href="index.php#whats-next">WHAT'S NEXT</a></li>
+    
 
         <li><a href="index.php#awards">AWARDS</a></li>
 

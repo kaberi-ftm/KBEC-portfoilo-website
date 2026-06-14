@@ -49,7 +49,7 @@
 
                     <li><a href="events.php">EVENTS</a></li>
 
-                    <li><a href="index.php#whats-next">What's Next</a></li>
+                
 
                     <li><a href="index.php#awards">Awards</a></li>
 
