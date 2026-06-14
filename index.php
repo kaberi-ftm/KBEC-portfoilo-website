@@ -305,9 +305,10 @@ if (isset($_GET['success'])) {
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#events">Events</a></li>
-                        <li><a href="#whats-next">What's Next</a></li>
+                    
                         <li><a href="#awards">Awards</a></li>
                         <li><a href="#about">About</a></li>
+                        <li><a href="admin/admin_login.php">Admin Panel</a></li>
                     </ul>
                 </div>
                 

@@ -24,7 +24,7 @@ if(!isset($_SESSION['admin'])){
         <ul>
             <li><a href="dashboard.php">Dashboard</a></li>
             <li><a href="alumni/manage_alumni.php">Alumni</a></li>
-            <li><a href="events/manage_events.php">Events</a></li>
+            <li><a href="events/events_admin.php">Events</a></li>
             <li><a href="executives/manage_executives.php">Executives</a></li>
             <li><a href="faculty/manage_faculty.php">Faculty</a></li>
             <li><a href="members/manage_members.php">Members</a></li>
