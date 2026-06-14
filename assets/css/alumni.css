@@ -1,0 +1,147 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --bg:#0b0704;
+    --card:#14100c;
+    --gold:#d4af37;
+    --gold-hover:#f0c85a;
+    --text:#f5f5f5;
+    --muted:#b7b7b7;
+    --border:rgba(212,175,55,.18);
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Poppins',sans-serif;
+}
+
+/* Alumni Section */
+
+.alumni-section{
+    padding:80px 5%;
+}
+
+.alumni-section h1{
+    text-align:center;
+    margin-bottom:50px;
+    color:var(--gold);
+    font-size:2.5rem;
+    letter-spacing:1px;
+}
+
+/* Grid */
+
+.alumni-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+/* Alumni Card */
+
+.alumni-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 0 25px rgba(0,0,0,.35);
+    transition:.3s ease;
+}
+
+.alumni-card:hover{
+    transform:translateY(-8px);
+    border-color:var(--gold);
+    box-shadow:0 0 30px rgba(212,175,55,.15);
+}
+
+/* Image */
+
+.alumni-image{
+    margin-bottom:20px;
+}
+
+.alumni-image img{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid var(--gold);
+}
+
+/* Name */
+
+.alumni-info h3{
+    color:var(--text);
+    font-size:1.4rem;
+    margin-bottom:15px;
+}
+
+/* Position Badge */
+
+.position-badge{
+    display:inline-block;
+    background:var(--gold);
+    color:#000;
+    padding:8px 18px;
+    border-radius:999px;
+    font-size:.9rem;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+/* Session */
+
+.session{
+    color:var(--muted);
+    margin-bottom:20px;
+    font-size:.95rem;
+}
+
+/* Social Links */
+
+.social-links{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.social-links a{
+    text-decoration:none;
+    background:transparent;
+    color:var(--gold);
+    border:1px solid var(--gold);
+    padding:10px 18px;
+    border-radius:8px;
+    transition:.3s;
+    font-weight:600;
+}
+
+.social-links a:hover{
+    background:var(--gold);
+    color:#000;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .alumni-section{
+        padding:60px 20px;
+    }
+
+    .alumni-section h1{
+        font-size:2rem;
+    }
+
+    .alumni-image img{
+        width:130px;
+        height:130px;
+    }
+}

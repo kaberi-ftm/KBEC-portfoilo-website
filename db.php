@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db = "kbec";
+$db = "kbec_db";
 
 $conn = new mysqli($host, $user, $pass, $db);
 

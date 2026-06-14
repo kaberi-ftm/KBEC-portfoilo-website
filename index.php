@@ -1,10 +1,17 @@
 <?php
 $pageTitle = "KUET Business & Entrepreneurship Club | KBEC";
 
+$conn = new mysqli("localhost:3306", "root", "", "kbec_db");
+
+if ($conn->connect_error) { die("Connection failed: " . $conn->connect_error); }
+$events = $conn->query(" SELECT * FROM events ORDER BY event_date DESC ");
+$sponsors = $conn->query("SELECT * FROM sponsors");
+$partners = $conn->query("SELECT * FROM club_partners");
 if (isset($_GET['success'])) {
     echo "<script>alert('Application Submitted Successfully!');</script>";
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,12 +50,19 @@ if (isset($_GET['success'])) {
         CLOSE ✕
     </button>
 
-    <li><a href="#home">HOME</a></li>
-    <li><a href="#about">ABOUT</a></li>
-    <li><a href="#events">EVENTS</a></li>
-    <li><a href="#whats-next">WHAT'S NEXT</a></li>
-    <li><a href="#awards">AWARDS</a></li>
-    <li><a href="#contact">CONTACT</a></li>
+   <li><a href="index.php#home">HOME</a></li>
+<li><a href="index.php#about">ABOUT</a></li>
+<li><a href="index.php#events">EVENTS</a></li>
+<li><a href="index.php#sponsors">SPONSORS</a></li>
+<li><a href="index.php#club_partners">CLUB PARTNERS</a></li>
+
+<li><a href="alumni.php">ALUMNI</a></li>
+<li><a href="executive_panel.php">EXECUTIVE PANEL</a></li>
+<li><a href="faculty_advisors.php">FACULTY ADVISORS</a></li>
+
+<li><a href="index.php#whats-next">WHAT'S NEXT</a></li>
+<li><a href="index.php#awards">AWARDS</a></li>
+<li><a href="index.php#contact">CONTACT</a></li>
 
     <li>
         <button class="join-btn" id="joinBtn">
@@ -104,109 +118,80 @@ if (isset($_GET['success'])) {
         </div>
     </section>
 
-    <!-- Events Section -->
-    <section class="events" id="events" aria-label="KBEC Events">
-        <div class="events-container">
-            <h2>Our Events</h2>
+   <!-- Activities Section Start -->
+  <section id="activities" class="activities">
+    <h2>Our Activities & Events</h2>
 
-            <p class="events-intro">
-                Explore the flagship events and initiatives organized by KBEC throughout the year.
-            </p>
+    <div class="slider">
 
-            <div class="event-grid">
+      <?php
+    $first = true;
 
-                <div class="event-card">
-                    <div class="event-image">
-                        <img src="event1.jpg" alt="KBEC Nexus">
-                    </div>
+    while($event = $events->fetch_assoc()) {
+    ?>
 
-                    <div class="event-content">
-                        <h3>KBEC Nexus</h3>
-                        <p class="event-date">Flagship Business Competition</p>
-                        <p>
-                            A premier platform where students compete through business strategy, innovation, and entrepreneurial thinking.
-                        </p>
-                    </div>
-                </div>
+      <div class="slide <?= $first ? 'active' : ''; ?>">
 
-                <div class="event-card">
-                    <div class="event-image">
-                        <img src="event2.jpg" alt="TEDxKUET">
-                    </div>
+        <img src="<?= htmlspecialchars($event['image']); ?>" alt="<?= htmlspecialchars($event['title']); ?>" />
 
-                    <div class="event-content">
-                        <h3>TEDxKUET</h3>
-                        <p class="event-date">Ideas Worth Spreading</p>
-                        <p>
-                            Bringing together visionaries, innovators, and changemakers to inspire the next generation through powerful stories.
-                        </p>
-                    </div>
-                </div>
+        <div class="slide-content">
 
-                <div class="event-card">
-                    <div class="event-image">
-                        <img src="event3.jpg" alt="Case Crack">
-                    </div>
+          <h3>
+            <?= htmlspecialchars($event['title']); ?>
+          </h3>
 
-                    <div class="event-content">
-                        <h3>Case Crack</h3>
-                        <p class="event-date">Business Case Competition</p>
-                        <p>
-                            Participants solve real-world business challenges and present strategic solutions before experienced judges.
-                        </p>
-                    </div>
-                </div>
+          <p>
+            <?= htmlspecialchars(substr($event['description'], 0, 150)); ?>
+            <?= strlen($event['description']) > 150 ? '...' : ''; ?>
+          </p>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- What's Next -->
-    <section class="whats-next" id="whats-next" aria-label="What's Next">
-
-        <div class="whats-next-header">
-            <h2>WHAT'S <span class="highlight">NEXT?</span></h2>
-        </div>
-
-        <div class="carousel-container">
-
-            <button class="carousel-btn prev" id="prevBtn">
-                ❮
-            </button>
-
-            <div class="carousel-wrapper">
-                <div class="carousel" id="carousel">
-
-                    <div class="carousel-item">
-                        <div class="carousel-label">UPCOMING</div>
-                        <div class="carousel-title">KBEC NEXUS S3</div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <div class="carousel-label">UPCOMING</div>
-                        <div class="carousel-title">TEDX KUET 2026</div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <div class="carousel-label">UPCOMING</div>
-                        <div class="carousel-title">CASE CRACK 3.0</div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <div class="carousel-label">UPCOMING</div>
-                        <div class="carousel-title">KBEC NEXUS S4</div>
-                    </div>
-
-                </div>
-            </div>
-
-            <button class="carousel-btn next" id="nextBtn">
-                ❯
-            </button>
+          <small>
+            <?= date("F d, Y", strtotime($event['event_date'])); ?>
+          </small>
 
         </div>
-    </section>
 
+      </div>
+
+      <?php
+        $first = false;
+    }
+    ?>
+
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+
+    </div>
+    </div>
+  </section>
+  <!-- Activities Section End -->
+  <script>
+  let slides = document.querySelectorAll(".slide");
+  let index = 0;
+
+  document.querySelector(".next").onclick = function() {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  };
+
+  document.querySelector(".prev").onclick = function() {
+    slides[index].classList.remove("active");
+    index = (index - 1 + slides.length) % slides.length;
+    slides[index].classList.add("active");
+  };
+  </script>
+  <!-- View all events -->
+  <section class="view-all-events-cta">
+    <div class="cta-container">
+      <h3>Want to explore more of our initiatives?</h3>
+      <p>
+        Discover past competitions, workshops, and flagship seminars organized
+        by KBEC.
+      </p>
+      <a href="events.php" class="btn primary-btn">View All Activities</a>
+    </div>
+  </section>
     <!-- Awards Section -->
     <section class="awards" id="awards" aria-label="Awards & Achievements">
         <div class="awards-container">
@@ -259,7 +244,41 @@ if (isset($_GET['success'])) {
             </div>
         </div>
     </section>
+ <!-- Sponsors Section Start -->
+  <section class="sponsors-section" id="sponsors">
+    <h2>Our Sponsors</h2>
+    <div class="sponsors-slider">
+      <div class="sponsors-track">
+        <?php while($sponsor = $sponsors->fetch_assoc()) { ?>
+        <div class="sponsor-card">
+          <img src="../uploads/sponsors/<?= $sponsor['logo']; ?>" alt="<?= htmlspecialchars($sponsor['title']); ?>">
+          <h3>
+            <?= htmlspecialchars($sponsor['title']); ?>
+          </h3>
+        </div>
+        <?php } ?>
+      </div>
 
+    </div>
+    <!-- Sponsors Section End -->
+  </section>
+  <!-- Club Partners Start -->
+  <section class="partners-section" id="club_partners">
+    <h2>Club Partners</h2>
+    <div class="partners-slider">
+      <div class="partners-track">
+        <?php while($partner = $partners->fetch_assoc()) { ?>
+        <div class="partner-card">
+          <img src="../uploads/club_partners/<?= $partner['logo']; ?>"
+            alt="<?= htmlspecialchars($partner['title']); ?>">
+          <h3>
+            <?= htmlspecialchars($partner['title']); ?>
+          </h3>
+        </div>
+        <?php } ?>
+      </div>
+    </div>
+  </section>
     <!-- Contact Section (Footer) -->
     <footer class="contact" id="contact" aria-label="Contact KBEC">
         <div class="contact-container">
