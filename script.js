@@ -140,3 +140,23 @@ document.querySelectorAll("#navMenu a").forEach(link => {
         navMenu.classList.remove("active");
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+
+  const menu = document.getElementById("navMenu");
+  const openBtn = document.getElementById("menuToggle");
+  const closeBtn = document.getElementById("menuClose");
+
+  if (!menu || !openBtn || !closeBtn) {
+    console.log("Navbar elements not found");
+    return;
+  }
+
+  openBtn.addEventListener("click", function () {
+    menu.classList.add("active");
+  });
+
+  closeBtn.addEventListener("click", function () {
+    menu.classList.remove("active");
+  });
+
+});

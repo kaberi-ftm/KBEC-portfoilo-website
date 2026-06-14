@@ -1,4 +1,5 @@
  <link rel="stylesheet" href="style.css">
+ <script src="script.js"></script>
 <nav class="navbar" id="navbar">
 
     <div class="brand">

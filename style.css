@@ -1602,3 +1602,126 @@ img {
         height:45px;
     }
 }
+/* =========================
+   SPONSORS + PARTNERS SECTION
+========================= */
+
+.sponsors-section,
+.partners-section {
+  padding: 100px 8%;
+  background: linear-gradient(180deg, #070707, #0a0a0a);
+  text-align: center;
+}
+
+.sponsors-section h2,
+.partners-section h2 {
+  font-size: 2.5rem;
+  color: var(--gold);
+  margin-bottom: 60px;
+  letter-spacing: 2px;
+}
+
+/* Slider wrapper */
+.sponsors-slider,
+.partners-slider {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Track (scrolling row) */
+.sponsors-track,
+.partners-track {
+  display: flex;
+  gap: 30px;
+  align-items: stretch;
+  animation: scrollLeft 25s linear infinite;
+}
+
+/* Card design */
+.sponsor-card,
+.partner-card {
+  flex: 0 0 220px;
+  background: linear-gradient(145deg, #101010, #0c0c0c);
+  border: 1px solid rgba(199, 168, 107, 0.25);
+  border-radius: 18px;
+  padding: 25px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow hover effect */
+.sponsor-card::before,
+.partner-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(199,168,107,0.15), transparent 60%);
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.sponsor-card:hover,
+.partner-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(199, 168, 107, 0.6);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.sponsor-card:hover::before,
+.partner-card:hover::before {
+  opacity: 1;
+}
+
+/* Logo image */
+.sponsor-card img,
+.partner-card img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin: 0 auto 15px;
+  filter: grayscale(20%);
+  transition: 0.3s ease;
+}
+
+.sponsor-card:hover img,
+.partner-card:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* Title */
+.sponsor-card h3,
+.partner-card h3 {
+  font-size: 1rem;
+  color: var(--text);
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* Auto scroll animation */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sponsor-card,
+  .partner-card {
+    flex: 0 0 160px;
+    padding: 20px 15px;
+  }
+
+  .sponsor-card img,
+  .partner-card img {
+    width: 70px;
+    height: 70px;
+  }
+}

@@ -60,7 +60,6 @@ if (isset($_GET['success'])) {
 <li><a href="executive_panel.php">EXECUTIVE PANEL</a></li>
 <li><a href="faculty_advisors.php">FACULTY ADVISORS</a></li>
 
-<li><a href="index.php#whats-next">WHAT'S NEXT</a></li>
 <li><a href="index.php#awards">AWARDS</a></li>
 <li><a href="index.php#contact">CONTACT</a></li>
 
